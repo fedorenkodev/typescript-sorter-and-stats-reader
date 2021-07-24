@@ -5,11 +5,8 @@ abstract class Sorter {
 			let swapped = false;
 
 			for (let j = 0; j < this.length - i - 1; j++) {
-
 				if (this.compare(j, j + 1)) {
-
 					this.swap(j, j + 1)
-
 					swapped = true;
 				}
 			}

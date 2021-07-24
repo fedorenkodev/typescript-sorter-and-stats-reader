@@ -1,18 +1,6 @@
-import { LinkedList, NumbersCollection, StringCollection } from "./sorter";
+import { Summary, MatchReader } from "./stats/composition";
 
-const linkedList = new LinkedList();
-linkedList.add(-1);
-linkedList.add(0);
-linkedList.add(9);
-linkedList.add(4);
+const matches = MatchReader.readFromCSV('football.csv');
 
-linkedList.sort();
-linkedList.print();
-
-const numbersCollection = new NumbersCollection([-1, 0, 9, 4])
-numbersCollection.sort();
-console.log(numbersCollection.data)
-
-const stringCollection = new StringCollection('bBaA')
-stringCollection.sort();
-console.log(stringCollection.data);
+const summary = Summary.winsAnalyzerAndHtmlReport('Newcastle', 'report.html');
+summary.analyzeAndReport(matches.data);
